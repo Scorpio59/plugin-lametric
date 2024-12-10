@@ -1,6 +1,16 @@
-29-08-2019
-===
-- Ajout de l'utilisation de l'api de notification local, plus besoin de créer un application sur le store en privée
-- Ajout de la possibilité de jouer un son lors de l'affichage d'une notification
-- Ajout de la possibilité de forcer l'affichage de la notification jusqu'à ce que le bouton sur LaMetric soit pressé ou que la commande 'dismiss' soit exécutée
-- Les icônes animés fonctionnent
+# Changelog LaMetric
+
+>**Wichtig**
+>
+>Zur Erinnerung: Wenn keine Informationen zum Update vorhanden sind, bedeutet dies, dass es sich nur um die Aktualisierung von Dokumentation, Übersetzung oder Text handelt.
+
+# 19.11.2020
+
+- Neue Darstellung der Objektliste
+- Hinzufügung des Tags "V4-Kompatibilität"
+- Plugin-Symbol aktualisieren
+
+# 11/05/2019
+
+- Jeedom V4-Kompatibilität
+- Unterstützung für PHP 7.3

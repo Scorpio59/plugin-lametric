@@ -1,87 +1,46 @@
-Plugin permettant d’afficher des notifications / informations sur
-LaMetric.
+# LaMetric plugin
 
-Configuration du plugin 
-=======================
-## Configuration des notifications locales
+Plugin to display notifications / information on LaMetric.
 
-Cette partie utilise l'API local de votre LaMetric et ne nécessite pas d'accès internet.
- 
-1. Creer un équipement LaMetric dans jeedom
-2. Remplir la section "Options pour les notifications" avec l'ip local de votre LaMetric et mettre le token API
+# Plugin configuration
 
-Pour trouver l'ip :
-- Aller dans l'application mobile
-- Ouvrir les paramètres
-- Ouvrir les paramètres du wi-fi
-- Récupérer l'ip
+Once the plugin is installed, it is necessary to create an "indicator App" on the LaMetric site :
 
-Pour trouver le token API :
-1. -  Se rendre à l’adresse : <https://developer.lametric.com/user/devices> et recupérer la clé api
-![lametricapikey](../images/lametric-site-apikey.png)
-
-## Mode application
-
-Une fois le plugin installé, il est nécessaire de créer une "indicator
-App" sur le site LaMetric :
-
--   1\. Se rendre à l’adresse : <https://developer.lametric.com>
-
--   2\. Créer une "INDICATOR APP" :
+-   1 \. Se rendre à l'adresse : <https://developer.lametric.com>
+-   2 \. Create an "INDICATOR APP" :
 
 ![lametric1](../images/lametric1.png)
 
--   3\. Configurer une icone, un nom et sélectionner Push dans "Communication
-    type" :
+-   3 \. Configure an icon, a name and select **Push** in "Typical communication" :
 
 ![lametric2](../images/lametric2.png)
 
--   4\. Donner un nom et une description à votre app et cocher "Private app"
-    puis cliquer sur "Save" :
+-   4 \. Give a name and a description to your app and check "Private app" then click on "Save" :
 
 ![lametric3](../images/lametric3.png)
 
--   5\. Publier l’application puis installer-la sur votre LaMetric grâce à
-    l’application mobile.
+-   5 \. Publish the application then install it on your LaMetric using the mobile application.
 
-Une fois l’application publiée, vous disposez des informations
-essentielles pour la configuration du plugin.
+Once the application is published, you have essential information for configuring the plugin.
 
 ![lametric4](../images/lametric4.png)
 
-Vous pouvez ensuite créer un nouvel équipement dans Jeedom et renseigner
-les champs demandés :
+You can then create new equipment in Jeedom and fill in the requested fields :
 
 ![lametric5](../images/lametric5.png)
 
-Utilisation du plugin 
-=====================
+# Using the plugin
 
-4 commandes sont automatiquement créées lors de l’ajout d’un équipement
-:
-## Commande pour les notifications locales
--   **Notification** ⇒ Permet l’envoi de notification
+2 orders are automatically created when adding equipment :
 
--   **Vider notifications** ⇒ Permet de vider toutes les notifications affichées ou en attentes
+-   **Message** : Allows sending of messages. The message type command contains 2 fields :
+    - **Icon ID** : Corresponds to the number of the desired icon (Do not put the hash ``#``). La liste des icônes disponibles est consultable à cette adresse : <https://developer.lametric.com/icons>).
+    - **Text** : Corresponds to the text you want to display.
+-   **Clear** : Used to reset the display to empty ("JEEDOM" is then registered).
 
-## Commande pour l'application
--   **Message** ⇒ Permet l’envoi de messages
+It is possible to send more messages in one send by separating the icons and the texts by the character : ``|``.
 
--   **Vider message** ⇒ Permet de remettre à vide l’affichage ("JEEDOM"
-    s’inscrit alors)
-
-
-## Utilisation de la commande message
-La commande de type message contient 2 champs : \* **ID Icone** :
-Correspond au numéro de l’icône souhaitée (Ne pas mettre le \# ; liste
-des icônes disponibles ici : <https://developer.lametric.com/icons>) \*
-**Texte** : Correspond au texte que l’on souhaite afficher
-
-Il est possible d’envoyer plus de messages en un seul envoi en séparant
-les icônes et les textes par le caractère : **|**
-
-Voici par exemple un scénario envoyant 4 informations différentes en 1
-seul envoi :
+Here is for example a scenario sending 4 different information at once :
 
 ![lametric6](../images/lametric6.png)
 

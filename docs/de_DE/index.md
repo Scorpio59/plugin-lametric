@@ -1,87 +1,46 @@
-Plugin permettant d’afficher des notifications / informations sur
-LaMetric.
+# LaMetric Plugin
 
-Configuration du plugin 
-=======================
-## Configuration des notifications locales
+Plugin zur Anzeige von Benachrichtigungen / Informationen zu LaMetric.
 
-Cette partie utilise l'API local de votre LaMetric et ne nécessite pas d'accès internet.
- 
-1. Creer un équipement LaMetric dans jeedom
-2. Remplir la section "Options pour les notifications" avec l'ip local de votre LaMetric et mettre le token API
+# Plugin Konfiguration
 
-Pour trouver l'ip :
-- Aller dans l'application mobile
-- Ouvrir les paramètres
-- Ouvrir les paramètres du wi-fi
-- Récupérer l'ip
+Sobald das Plugin installiert ist, muss auf der LaMetric-Site eine "Indikator-App" erstellt werden :
 
-Pour trouver le token API :
-1. -  Se rendre à l’adresse : <https://developer.lametric.com/user/devices> et recupérer la clé api
-![lametricapikey](../images/lametric-site-apikey.png)
-
-## Mode application
-
-Une fois le plugin installé, il est nécessaire de créer une "indicator
-App" sur le site LaMetric :
-
--   1\. Se rendre à l’adresse : <https://developer.lametric.com>
-
--   2\. Créer une "INDICATOR APP" :
+-   1 \. Se rendre à l'adresse : <https://developer.lametric.com>
+-   2 \. Erstellen Sie eine "INDICATOR APP" :
 
 ![lametric1](../images/lametric1.png)
 
--   3\. Configurer une icone, un nom et sélectionner Push dans "Communication
-    type" :
+-   3 \. Konfigurieren Sie ein Symbol, einen Namen und wählen Sie **Drücken** in "Typische Kommunikation" :
 
 ![lametric2](../images/lametric2.png)
 
--   4\. Donner un nom et une description à votre app et cocher "Private app"
-    puis cliquer sur "Save" :
+-   4 \. Geben Sie Ihrer App einen Namen und eine Beschreibung, aktivieren Sie "Private App" und klicken Sie auf "Speichern"" :
 
 ![lametric3](../images/lametric3.png)
 
--   5\. Publier l’application puis installer-la sur votre LaMetric grâce à
-    l’application mobile.
+-   5 \. Veröffentlichen Sie die Anwendung und installieren Sie sie mit der mobilen Anwendung auf Ihrem LaMetric.
 
-Une fois l’application publiée, vous disposez des informations
-essentielles pour la configuration du plugin.
+Sobald die Anwendung veröffentlicht ist, verfügen Sie über wichtige Informationen zum Konfigurieren des Plugins.
 
 ![lametric4](../images/lametric4.png)
 
-Vous pouvez ensuite créer un nouvel équipement dans Jeedom et renseigner
-les champs demandés :
+Sie können dann in Jeedom neue Ausrüstung erstellen und die gewünschten Felder ausfüllen :
 
 ![lametric5](../images/lametric5.png)
 
-Utilisation du plugin 
-=====================
+# Mit dem Plugin
 
-4 commandes sont automatiquement créées lors de l’ajout d’un équipement
-:
-## Commande pour les notifications locales
--   **Notification** ⇒ Permet l’envoi de notification
+Beim Hinzufügen von Geräten werden automatisch 2 Bestellungen erstellt :
 
--   **Vider notifications** ⇒ Permet de vider toutes les notifications affichées ou en attentes
+-   **Nachricht** : Ermöglicht das Senden von Nachrichten. Der Befehl Nachrichtentyp enthält 2 Felder :
+    - **Symbol ID** : Entspricht der Nummer des gewünschten Symbols (Geben Sie keinen Hash ein ``#``). La liste des icônes disponibles est consultable à cette adresse : <https://developer.lametric.com/icons>).
+    - **Text** : Entspricht dem Text, den Sie anzeigen möchten.
+-   **Leeren** : Wird verwendet, um die Anzeige auf leer zurückzusetzen ("JEEDOM" wird dann registriert).
 
-## Commande pour l'application
--   **Message** ⇒ Permet l’envoi de messages
+Es ist möglich, mehrere Nachrichten auf einmal zu senden, indem die Symbole und die Texte durch das Zeichen getrennt werden : ``|``.
 
--   **Vider message** ⇒ Permet de remettre à vide l’affichage ("JEEDOM"
-    s’inscrit alors)
-
-
-## Utilisation de la commande message
-La commande de type message contient 2 champs : \* **ID Icone** :
-Correspond au numéro de l’icône souhaitée (Ne pas mettre le \# ; liste
-des icônes disponibles ici : <https://developer.lametric.com/icons>) \*
-**Texte** : Correspond au texte que l’on souhaite afficher
-
-Il est possible d’envoyer plus de messages en un seul envoi en séparant
-les icônes et les textes par le caractère : **|**
-
-Voici par exemple un scénario envoyant 4 informations différentes en 1
-seul envoi :
+Hier ist zum Beispiel ein Szenario, in dem 4 verschiedene Informationen gleichzeitig gesendet werden :
 
 ![lametric6](../images/lametric6.png)
 
